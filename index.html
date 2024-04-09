@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wordle Game</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+</head>
+<body>
+    <!-- header -->
+    <div class="header">
+        <div class="brand">
+            <div class="name-app">wrodle game</div>
+        </div>
+
+        <div class="button-section">
+            <div id="new-game">new game</div>
+            <div id="setting" class="button"><i class="bi bi-gear icon"></i></div>
+            <div id="question" class="button"><i class="bi bi-question-circle icon"></i></div>
+        </div>
+
+        <!-- popup -->
+
+        <!-- setting -->
+        <div id="settings-popup">
+            <div class="setting-header">
+                <h3>settings</h3>
+                <i id="close-setting-button" class="bi bi-x-lg close-button"></i>
+            </div>
+            <div class="number-of-letters">
+                <h3>number of letters</h3>
+                <div id="pick-number-letters"></div>
+            </div>
+        </div>
+
+        <!-- how to play -->
+        <div id="how-popup">
+            <div class="how-header">
+                <h3>how to play</h3>
+                <i id="close-setting-button" class="bi bi-x-lg close-button"></i>
+            </div>
+            <div class="roles">
+                <div>
+                    <p>You have to guess the hidden word in 6 tries and the color of the letters changes to show how close you are.</p>
+                    <br>
+                    <p>To start the game, just enter any word, for example:</p>
+                </div>
+                <div class="box-container">
+                    <div class="box absent">t</div>
+                    <div class="box present">a</div>
+                    <div class="box absent">b</div>
+                    <div class="box present">l</div>
+                    <div class="box correct">e</div>
+                </div>
+                <div class="type-of-color">
+                    <div class="line"><div class="small box absent">t</div>,<div class="small box absent">b</div><p>aren't in the target word at all.</p></div>
+                    <div class="line"><div class="small box present">a</div>,<div class="small box present">l</div><p>is in the word but in the wrong spot.</p></div>
+                    <div class="line"><div class="small box correct">e</div><p>is in the word and in the correct spot.</p></div>
+                </div>
+                <p>Another try to find matching letters in the target word.</p>
+                <div class="box-container">
+                    <div class="box correct">f</div>
+                    <div class="box correct">l</div>
+                    <div class="box correct">a</div>
+                    <div class="box correct">s</div>
+                    <div class="box correct">h</div>
+                </div>
+                <p>So close!</p>
+                <div class="box-container">
+                    <div class="box correct">f</div>
+                    <div class="box correct">l</div>
+                    <div class="box correct">a</div>
+                    <div class="box correct">m</div>
+                    <div class="box correct">e</div>
+                </div>
+                <p class="highlight">Got it! 🏆</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- board -->
+    <div id="board"></div>
+        
+    <!-- result player -->
+    <div class="result-container">
+        <p id="state">playing...</p>
+        <p id="correct-word"></p>
+    </div>
+
+    <!-- keyboard -->
+    <div id="keyboard"></div>
+</body>
+</html>

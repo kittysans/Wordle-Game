@@ -1,0 +1,435 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Open Sans, sans-serif;
+}
+
+body {
+    display: grid;
+    margin-bottom: 30px;
+    gap: 30px;
+}
+
+/* header */
+.header {
+    height: 80px;
+
+    padding-inline: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fafafa;
+    border-bottom: 3px solid #e9ecef;
+    position: relative;
+}
+
+.name-app {
+    text-transform: capitalize;
+    font-weight: bold;
+    user-select: none;
+    cursor: pointer;
+}
+
+.button-section {
+    display: flex;
+    gap: 10px;
+}
+
+.button-section #new-game {
+    display: grid;
+    place-content: center;
+    padding-inline: 20px;
+    background: #79B851;
+    color: #fff;
+    border-radius: 5px;
+    user-select: none;
+    text-transform: capitalize;
+    font-size: .8em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all .25s;
+}
+
+.button-section button:hover {
+    background: #79b851bb
+}
+
+.button {
+    width: 40px;
+    height: 40px;
+
+    display: grid;
+    place-content: center;
+    border-radius: 5px;
+    background: #e9ecef;
+    cursor: pointer;
+    transition: all .25s;
+}
+
+.button .icon {
+    color: #222;
+    font-size: 20px;
+    transition: all .25s;
+}
+
+.button:hover {
+    background: #79b85123;
+}
+.button:hover .icon {
+    color: #79B851;
+}
+
+/* popup */
+
+#settings-popup.show {
+    display: block;
+}
+#settings-popup {
+    display: none;
+
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    translate: -50%;
+
+    margin-top: 30px;
+    width: 600px;
+    background: #fff;
+    border-bottom: 1px solid #222;
+}
+
+#settings-popup .setting-header {
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: #E5ECFF;
+    position: relative;
+}
+
+#settings-popup .setting-header h3 {
+    text-transform: capitalize;
+    user-select: none;
+}
+
+#settings-popup .setting-header .close-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    display: grid;
+    place-content: center;
+    width: 50px;
+    height: inherit;
+    cursor: pointer;
+    color: #999;
+    font-size: 1.2em;
+    transition: all .25s;
+}
+
+#settings-popup .setting-header .close-button:hover {
+    color: #222;
+}
+
+#settings-popup .number-of-letters {
+    height: 110px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+#settings-popup .number-of-letters h3 {
+    text-transform: capitalize;
+}
+
+#settings-popup .number-of-letters #pick-number-letters {    
+    display: flex;
+    gap: 10px;
+}
+
+#settings-popup .number-of-letters .box-number-letter {
+    width: 50px;
+    height: 50px;
+
+    display: grid;
+    place-content: center;
+    border-radius: 5px;
+    background: #f0f2f8;
+    color: #222;
+    cursor: pointer;
+    transition: all .25s;
+}
+#settings-popup .number-of-letters .box-number-letter:hover {
+    background: #79B851;
+}
+
+#settings-popup .number-of-letters .box-number-letter.curr-number-of-letter {
+    background: #79B851;
+    color: #fff;
+}
+
+/* how to play popup */
+#how-popup.show {
+    display: block;
+}
+
+#how-popup {
+    display: none;
+
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    translate: -50%;
+
+    margin-top: 30px;
+    width: 600px;
+    background: #fff;
+}
+
+#how-popup .number-of-letters h3 {
+    text-transform: capitalize;
+}
+
+#how-popup .how-header {
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: #E5ECFF;
+    position: relative;
+}
+
+#how-popup .how-header h3 {
+    text-transform: capitalize;
+    user-select: none;
+}
+
+#how-popup .how-header .close-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    display: grid;
+    place-content: center;
+    width: 50px;
+    height: inherit;
+    cursor: pointer;
+    color: #999;
+    font-size: 1.2em;
+    transition: all .25s;
+}
+
+#how-popup .how-header .close-button:hover {
+    color: #222;
+}
+
+#how-popup .roles {
+    padding: 20px 50px;
+    
+    display: grid;
+    gap: 15px;
+}
+
+#how-popup .roles p {
+    text-align: center;
+    font-size: .8em;
+}
+
+#how-popup .roles .box-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+#how-popup .roles .box {
+    width: 50px;  
+    height: 50px;
+    
+    display: grid;
+    place-content: center;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+#how-popup .roles .box.absent {
+    background: #ced4da;
+}
+#how-popup .roles .box.present {
+    background: #F3C237;
+}
+#how-popup .roles .box.correct {
+    background: #79B851;
+}
+
+#how-popup .roles .type-of-color {
+    margin-inline: 50px;
+    padding: 15px;
+    display: grid;
+    gap: 5px;
+    border-radius: 10px;
+    background: #f0f2f8;
+}
+
+#how-popup .roles .type-of-color .line {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+#how-popup .roles .type-of-color .small {
+    width: 25px;
+    height: 25px;
+    font-size: 1em;
+}
+
+#how-popup .roles .highlight {
+    font-weight: bold;
+}
+
+/* board */
+
+#board {
+    width: max-content;
+
+    margin-inline: auto;
+    display: grid;
+    gap: 5px;
+}
+
+#board .row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+#board .row .box {
+    --box-size: 60px;
+
+    width: var(--box-size);
+    height: var(--box-size);
+
+    display: grid;
+    place-content: center;
+    border-radius: 5px;
+    border: 2px solid #e9ecef;
+    cursor: pointer;
+    font-size: 2em;
+    font-weight: bold;
+}
+#board .row .box.have-letter {
+    border-color: #ced4da;
+}
+#board .row .box.correct {
+    background: #79B851;
+    color: #fafafa;
+    border-color: transparent;
+}
+#board .row .box.present {
+    background: #F3C237;
+    color: #fafafa;
+    border-color: transparent;
+}
+#board .row .box.absent {
+    background: #ced4da;
+    color: #fafafa;
+    border-color: transparent;
+}
+
+/* result player */
+
+.result-container {
+    margin-inline: auto;
+    padding: 10px 15px;
+    place-content: center;
+    border-radius: 5px;
+    background: #e9ecef;
+}
+
+.result-container p {
+    text-align: center;
+    text-transform: capitalize;
+    font-size: .8em;
+    font-weight: bold;
+    color: #222;
+}
+
+/* keyboard */
+
+#keyboard {
+    --height-keyboard: 150px;
+
+    width: 600px;
+    height: var(--height-keyboard);
+
+    margin-inline: auto;
+}
+#keyboard .row {
+    height: calc((var(--height-keyboard) / 3));
+
+    padding: 5px;
+    gap: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#keyboard .row .key {
+    width: 100%;
+    height: 100%;
+
+    display: grid;
+    place-content: center;
+    border-radius: 5px;
+    background: #e9ecef;
+    color: #222;
+    text-transform: capitalize;
+    user-select: none;
+    cursor: pointer;
+    font-weight:bold;
+    transition: all .25s;
+}
+#keyboard .row .key:hover {
+    background: #ced4da;
+}
+#keyboard .row .button {
+    width: 200%;
+}
+#keyboard .row .key.correct {
+    background: #79B851;
+    color: #fafafa;
+}
+#keyboard .row .key.absent {
+    background: #ced4da;
+    color: #fafafa;
+}
+
+@media screen and (width <= 650px) {
+    #keyboard {
+        width: 100%;
+    }
+}
+@media screen and (width <= 600px) {
+    #board .row .box {
+        --box-size: 50px;
+    }
+}
+
+@media screen and (width <= 400px) {
+    #board .row .box {
+        --box-size: 30px;
+    }
+}
